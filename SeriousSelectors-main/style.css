@@ -44,7 +44,7 @@ differently from number 4. This will center and underline
 the text underneath the board(the area currently 
 filled with red images). */
 
-div + p {
+div ~ p {
   text-align: center;
   text-decoration: underline;
 }
@@ -54,7 +54,7 @@ that is a div. When this selector is correct,
 the two red chunks will disappear and you'll be able to see
 all of the red board pieces. */
 
-div img  {
+div > img  {
   width: 95%;
   height: 95%;
   margin: auto;
@@ -75,9 +75,9 @@ div .cell {
   display: block;
   height: 50px;
   width: 50px;
-  border-color: black;
+  border-color: purple;
   border-style: solid;
-  border-width: 1px;
+  border-width: thin;
   font-size: 150%;
 }
 
@@ -91,7 +91,7 @@ div div div {
   height: 95%;
   width: 95%;
   border-radius: 50%;
-  border: solid grey thin;
+  border: solid grey 1px;
   margin: auto;
   background-color: blue;
 }
@@ -111,7 +111,7 @@ to specify what the parent must be.*/
   background-color: black;
 }
 
-#board .cell:nth-child(3n -1) {
+#board .cell:nth-child(3n - 1) {
   background-color: lavender;
 }
 
@@ -133,6 +133,10 @@ img:hover, div div div:hover{
   border: solid yellow thin;
 }
 
+/*Using the :empty selector, I can add special effects to distiguish empty cells from other cells*/
+#board .cell:empty {
+  border: solid yellow thin;
+}
 /* ## Extensions
 Now that your board is looking great and you've become a css selector master, here are some extensions to keep improving your page! 
 1. Add and change style rules so that the background of the board alternates between three different colors. (For example, a white cell, then a black cell, then a purple cell repeated across the entire board).
